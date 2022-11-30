@@ -29,6 +29,8 @@ public class Siakad {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Pilih algoritma pengurutan");
         System.out.println("1. EXCHANGE SORT");
+        System.out.println("2. SELECTION SORT");
+        System.out.println("3. QUICK SORT");
         System.out.print("Pilih algoritma = ");
         int algo = scanner.nextInt();
         switch (algo) {
