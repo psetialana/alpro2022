@@ -38,7 +38,35 @@ public class Siakad {
                 exchangeSort();
                 break;
             }
+            case 3: {
+                quickSort(mahasiswa, 0, jumlahData-1);
+                break;
+            }
         }
+    }
+
+    public static void quickSort(Mahasiswa[] arr, int low, int high){
+        if(low < high){
+            int p = partition(arr, low, high);
+            quickSort(arr, low, p-1);
+            quickSort(arr, p+1, high);
+        }
+    }
+
+    static int partition(Mahasiswa[] arr, int low, int high){
+        int p = low, j;
+        for(j=low+1; j <= high; j++)
+            if(arr[j].getNim().compareTo(arr[low].getNim())<=-1)
+                swap(arr, ++p, j);
+    
+        swap(arr, low, p);
+        return p;
+    }
+
+    static void swap(Mahasiswa[] arr, int low, int pivot){
+        Mahasiswa tmp = arr[low];
+        arr[low] = arr[pivot];
+        arr[pivot] = tmp;
     }
 
     public static void exchangeSort() {
